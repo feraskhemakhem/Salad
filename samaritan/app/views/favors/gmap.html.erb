@@ -130,7 +130,7 @@
       map: map});
 
       google.maps.event.addListener(marker1, 'click', function() {
-        window.open('./requests/11','_self');
+        window.open('./requests/26','_self');
       });
 
       marker2 = new google.maps.Marker({
@@ -154,7 +154,7 @@
             map: map});
 
             google.maps.event.addListener(marker4, 'click', function() {
-              window.open('./requests/25','_self');
+              window.open('./requests/11','_self');
             });
 
     infowindow = new google.maps.InfoWindow({
@@ -166,15 +166,15 @@
     });
 
     google.maps.event.addListener(map, 'click', function(event) {
-      marker = new google.maps.Marker({
-        position: event.latLng,
-        map: map
-      });
-
-
-      google.maps.event.addListener(marker, 'click', function() {
-        window.open('./dumQuest.html','_self');
-      });
+      // marker = new google.maps.Marker({
+      //   position: event.latLng,
+      //   map: map
+      // });
+      //
+      //
+      // google.maps.event.addListener(marker, 'click', function() {
+      //   window.open('./dumQuest.html','_self');
+      // });
     });
   }
 
