@@ -1,5 +1,5 @@
-> ##### Created by Team Salad
-> Vegans unite!
+##### Created by Team Salad
+Vegans unite!
 
 
 # __Samaritan__
