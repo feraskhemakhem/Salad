@@ -166,8 +166,8 @@
     <h1 id = 'title'> Do you need a favor? </h1>
 
     <div id = 'mini'>
-      <%= button_to "YES", gmap_path, :id => "yesButt", :type => "button", :method => :get %>
-      <%= button_to "NO", req_path, :id => "noButt", :type => "button", :method => :get %>
+      <%= button_to "YES", new_path, :id => "yesButt", :type => "button", :method => :get %>
+      <%= button_to "NO", gmap_path, :id => "noButt", :type => "button", :method => :get %>
       <!--    <h3> <%= link_to "Continue", ques_path %><h3> -->
       <!-- ^example link^ -->
       <button id = 'yesButt' onclick="location.href='./requestForm.html'"; type="button">YES</button>

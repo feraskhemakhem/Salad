@@ -52,6 +52,7 @@
   <center>
 
   <h2> This is a form. </h2>
+  <!-- old form in html
   <form method="post" action="#">
 
 
@@ -74,7 +75,16 @@
 
   </center>
 
-  </form>
+</form> -->
+  <!-- new form in rails -->
+<%= form_for :request do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
+
+
+
+
+<% end %>
 
   <!-- <form action = "sendToBackend"> -->
   <!-- </form> -->

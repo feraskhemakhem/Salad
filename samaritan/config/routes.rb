@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'gmap' => 'favors#gmap', as: 'gmap'
 
-  get 'req' => 'favors#req', as: 'req'
+  get 'new' => 'requests#new', as: 'new'
+
+  resources :requests
 
 end

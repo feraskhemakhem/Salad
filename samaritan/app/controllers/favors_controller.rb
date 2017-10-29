@@ -14,8 +14,4 @@ class FavorsController < ApplicationController
 
   end
 
-  def req
-
-  end
-
 end
