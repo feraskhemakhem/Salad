@@ -1,0 +1,86 @@
+<!DOCTYPE html >
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>Samaritan</title>
+  <style>
+
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    background-color: #052542;
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+       -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
+}
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <center>
+
+  <h2> This is a form. </h2>
+  <form method="post" action="#">
+
+
+    <div class="field half first">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" />
+    </div>
+    <div class="field half">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" />
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="4"></textarea>
+    </div>
+    <ul class="actions">
+      <li><input type="submit" value="Send Message" class="special"/></li>
+      <li><input type="reset" value="Reset"/></li>
+    </ul>
+
+  </center>
+
+  </form>
+
+  <!-- <form action = "sendToBackend"> -->
+  <!-- </form> -->
+
+
+</body>
+
+
+</html>
