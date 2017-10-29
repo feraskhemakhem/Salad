@@ -2,10 +2,8 @@
 Vegans unite!
 
 
-
-############## Samaritan ##############
-## a simple deed helps those in need ##
-#######################################
+# Samaritan
+a simple deed helps those in need
 
 # Inspiration
 We were inspired by Facebook's Community Building award and JP Morgan Chase's Social Good Challenge to create some sort of product that could promote a better society. We thought about existing applications that already do this in order to come up with an idea that has not yet been done.
