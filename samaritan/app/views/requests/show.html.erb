@@ -1,3 +1,236 @@
- <h2><%= @request.name %></h2>
- <p><%= @request.phone %></p>
- <p><%= @request.details %></p>
+ <!DOCTYPE html >
+ <head>
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   <link href=' http://fonts.googleapis.com/css?family=Century+Gothic' rel='stylesheet' type='text/css'>
+
+   <title>Samaritan</title>
+   <style>
+ /*
+   @font-face {
+       font-family: "Century Gothic";
+       src: url(http://www.example.org/mycustomfont.ttf) format("truetype");
+   }
+   p.customfont {
+   font-family: "My Custom Font", Verdana, Tahoma;
+   }*/
+
+   /* Optional: Makes the sample page fill the window. */
+
+   h1{
+     font-weight: 200;
+   }
+
+   #loading.hide-opacity{
+
+   }
+
+   #loading {
+     color:inherit;
+     text-align: center;
+     font-family: inherit;
+     color: inherit;
+     position: absolute;
+     top: 50%;
+     left: 40%;
+     transform: translateY(-50%);
+
+         align-items: center;
+         align-content: center;
+
+     -webkit-transition: opacity 3s ease-in-out;
+     -moz-transition: opacity 3s ease-in-out;
+     -ms-transition: opacity 3s ease-in-out;
+     -o-transition: opacity 3s ease-in-out;
+   }
+
+   html, body {
+
+     height: 100%;
+     width: 100%;
+
+     margin: 0;
+     padding: 0;
+     font-size: 1rem;
+
+     background-color: #052542;
+
+
+     color: #f6f7fb;
+
+     font-family: 'Century Gothic';
+
+     -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+       -moz-animation-delay: 2s;
+         -ms-animation-delay: 2s;
+         -o-animation-delay: 2s;
+        animation-delay: 2s;
+
+     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s; /* Firefox < 16 */
+       -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+           animation: fadein 2s;
+ }
+
+
+ @keyframes fadein {
+   from { opacity: 0; }
+   to   { opacity: 1; }
+ }
+
+ /* Firefox < 16 */
+ @-moz-keyframes fadein {
+   from { opacity: 0; }
+   to   { opacity: 1; }
+ }
+
+ /* Safari, Chrome and Opera > 12.1 */
+ @-webkit-keyframes fadein {
+   from { opacity: 0; }
+   to   { opacity: 1; }
+ }
+
+ /* Internet Explorer */
+ @-ms-keyframes fadein {
+   from { opacity: 0; }
+   to   { opacity: 1; }
+ }
+
+   #main{
+     position: relative;
+     top: 50%;
+     transform: translateY(-50%);
+
+         align-items: center;
+         align-content: center;
+
+   }
+
+   #title{
+     position: inherit;
+     align-items: center;
+     align-content: center;
+     padding-bottom: 1rem;
+     font-family: inherit;
+     font-size: 40pt;
+     color: #f6f7fb;
+
+   }
+
+   #mini{
+     width: 10%;
+     height: 10%;
+     position: inherit;
+     right: 2%;
+
+   }
+   #mini button{
+     width: 15rem;
+     height: 4rem;
+
+     align-items: center;
+     align-content: center;
+
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+
+     display: block;
+     border: none;
+
+     font: inherit;
+     color: #7a9ec7;
+
+   }
+
+   #mini #yesButt:hover{
+     background-color: #CC9787;
+     cursor: pointer;
+     -moz-transition: background-color 0.8s ease-in-out;
+ 		-webkit-transition: background-color 0.8s ease-in-out;
+ 		-ms-transition: background-color 0.8s ease-in-out;
+   }
+
+
+     #mini #noButt:hover{
+       background-color: #CC9787;
+       cursor: pointer;
+       -moz-transition: background-color 0.8s ease-in-out;
+   		-webkit-transition: background-color 0.8s ease-in-out;
+   		-ms-transition: background-color 0.8s ease-in-out;
+     }
+
+   #yesButt {
+     font-family: inherit;
+     font-size: 40pt;
+     color: #7a9ec7;
+
+     background-color: #3e6589;
+     border-color: #95888f;
+     border-style: solid;
+     border-width: 5px;
+     border-radius: 9px;
+   }
+
+   #noButt{
+     font-family: inherit;
+     font-size: 40pt;
+     background-color: #3e6589;
+     border-color: #4a4f69;
+     border-width: 5px;
+     border-radius: 9px;
+
+   }
+   #title{
+     font-color: #7a9ec7;
+     color: #7a9ec7;
+   }
+
+   .detail {
+     width: auto;
+     height: auto;
+     margin-bottom: 2rem;
+     text-align: left;
+     margin-left: 1.5rem;
+   }
+
+   #deetCard{
+     width: 28rem;
+     height: auto;
+     border-style: solid;
+     border-color: #7a9ec7;
+     border-width: 3px;
+     border-radius: 9px;
+
+   }
+
+   </style>
+ </head>
+ <body>
+
+   <center id = 'main'>
+
+     <!-- <h1 id='loading'> S A M A T A R I N. </h1> -->
+     <!--  <h2><%= @request.name %></h2>
+      <p><%= @request.phone %></p>
+      <p><%= @request.details %></p> -->
+     <h1 id = 'title'> <%= @request.name %> </h1>
+     <div id = 'deetCard'>
+       <h3 class = 'detail'> Favor: "<%= @request.details %>"</h3>
+       <h3 class = 'detail'> Contact: <%= @request.phone %> </h3>
+       <h3 class = 'detail'> Location: (30.2689820, -97.7403350) </h3>
+    </div>
+
+     <div id = 'mini'>
+       <button id = 'yesButt' onclick="location.href='./index.html'"; type="button"> Sure Thing! </button>
+       <button id = 'noButt' onclick="location.href='./index.html'"; type="button"> Sorry, can't help. </button>
+       <%= button_to "Sure Thing!", gmap_path, :id => "noButt", :type => "button", :method => :get %>
+       <%= button_to "Sorry, can't help. :(", gmap_path, :id => "noButt", :type => "button", :method => :get %>
+
+     </div>
+   </center>
+
+ </body>
+
+
+ </html>
