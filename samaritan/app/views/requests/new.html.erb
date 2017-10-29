@@ -35,6 +35,12 @@
     width: 100%;
     margin: 0 auto;
     position: relative;
+    font: 400 12px/16px "Century Gothic", Helvetica, Arial, sans-serif;
+    background: #F9F9F9;
+    background-color:rgba(0, 0, 0, 0);
+
+    padding: 25px;
+    margin: 150px 0;
   }
 
   #contact input[type="text"],
@@ -81,27 +87,29 @@
   #contact input[type="email"],
   #contact input[type="tel"],
   #contact input[type="url"],
-  #contact textarea {
+  #contact textarea, .text_stuff {
     width: 100%;
     border: 1px solid #7a9ec7;
     background: #7a9ec7;
-    margin: 0 0 5px;
+    margin: 7px 0 0 0;
     padding: 10px;
     border-style: solid;
     border-width: 2px;
     border-radius: 9px;
+    font: 400 12px/16px "Century Gothic", Helvetica, Arial, sans-serif;
+
   }
 
   #contact input[type="text"]:hover,
   #contact input[type="email"]:hover,
   #contact input[type="tel"]:hover,
   #contact input[type="url"]:hover,
-  #contact textarea:hover {
+  #contact textarea:hover, .text_stuff:hover {
     -webkit-transition: border-color 0.3s ease-in-out;
     -moz-transition: border-color 0.3s ease-in-out;
     transition: border-color 0.3s ease-in-out;
     border: 2px solid #CC9787;
-
+    font: 400 12px/16px "Century Gothic", Helvetica, Arial, sans-serif;
     border-style: solid;
     border-width: 2px;
     border-radius: 9px;
@@ -113,28 +121,29 @@
     resize: none;
   }
 
-  #contact button[type="submit"] {
+  #contact button[type="submit"], #contact_button {
     cursor: pointer;
     width: 100%;
     border: none;
     background: #3e6589;
     color: #7a9ec7;
-    margin: 0 0 5px;
+    margin: 10px 0 5px;
     padding: 10px;
     font-size: 15px;
+    font: 400 15px "Century Gothic", Helvetica, Arial, sans-serif;
 
     border-style: none;
     border-radius: 9px;
   }
 
-  #contact button[type="submit"]:hover {
+  #contact button[type="submit"]:hover, #contact_button:hover {
     background: #CC9787;
     -webkit-transition: background 0.6s ease-in-out;
     -moz-transition: background 0.6s ease-in-out;
     transition: background-color 0.6s ease-in-out;
   }
 
-  #contact button[type="submit"]:active {
+  #contact button[type="submit"]:active, #contact_button:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
@@ -177,7 +186,16 @@
           animation: fadein 2s;
 }
 
+#request_favor {
+   font-size: 30px;
+   font-weight: 300;
+   line-height: 30px;
+   margin-bottom: 10px;
+}
 
+#big_box {
+  padding-bottom: 70px;
+}
 
 
 @keyframes fadein {
@@ -230,18 +248,26 @@
   </div>
 -->
   <!-- new form in rails -->
-  <%= form_for :request, url: requests_path do |f| %>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br><br>
+  <center>
+    <div class="container">
+      <%= form_for :request, url: requests_path do |f| %>
+      <h3 id="request_favor">Request a Favor <3</h3>
+      <fieldset>
+        <%= f.text_field :name, placeholder: "NAME", class: "text_stuff", tabindex: "1" %>
+      </fieldset>
+      <fieldset>
+        <%= f.text_field :phone, placeholder: "PHONE NUMBER", class: "text_stuff", tabindex: "3"%>
+      </fieldset>
+      <fieldset>
+        <%= f.text_field :details, placeholder: "REQUEST (max 25 characters)", class: "text_stuff", id: "big_box", tabindex: "5"%>
+      </fieldset>
+      <fieldset>
+        <%= f.submit :Submit, id: "contact_button" %>
+      </fieldset>
 
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %><br><br>
+      <% end %>
+    </div>
 
-    <%= f.label :details %><br>
-    <%= f.text_field :details %><br><br>
-
-    <%= f.submit :'make request'%>
-  <% end %>
 
 
   <!-- <form action = "sendToBackend"> -->
