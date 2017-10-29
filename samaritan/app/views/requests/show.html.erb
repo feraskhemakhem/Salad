@@ -161,23 +161,32 @@
      }
 
    #yesButt {
-     font-family: inherit;
-     font-size: 40pt;
+     font-family: 'Century Gothic';
+     font-size: 10pt;
      color: #7a9ec7;
 
+     width: 10.5rem;
+     height: rem;
+
      background-color: #3e6589;
-     border-color: #95888f;
+     border-color: #3e6589;
      border-style: solid;
-     border-width: 5px;
+     border-width: 16px;
      border-radius: 9px;
    }
 
    #noButt{
-     font-family: inherit;
-     font-size: 40pt;
+     font-family: 'Century Gothic';
+     font-size: 10pt;
+     color: #7a9ec7;
+
+     width: 10.5rem;
+     height: rem;
+
      background-color: #3e6589;
-     border-color: #4a4f69;
-     border-width: 5px;
+     border-color: #3e6589;
+     border-style: solid;
+     border-width: 16px;
      border-radius: 9px;
 
    }
@@ -222,9 +231,10 @@
     </div>
 
      <div id = 'mini'>
-       <button id = 'yesButt' onclick="location.href='./index.html'"; type="button"> Sure Thing! </button>
-       <button id = 'noButt' onclick="location.href='./index.html'"; type="button"> Sorry, can't help. </button>
+       <br>
+       <br>
        <%= button_to "Sure Thing!", gmap_path, :id => "noButt", :type => "button", :method => :get %>
+       <br>
        <%= button_to "Sorry, can't help. :(", gmap_path, :id => "noButt", :type => "button", :method => :get %>
 
      </div>

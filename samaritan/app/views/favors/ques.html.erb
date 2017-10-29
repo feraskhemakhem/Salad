@@ -96,6 +96,11 @@
     height: 10%;
     position: inherit;
     right: 4%;
+    border: none;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 1rem;
+
   }
   
   #mini button{
@@ -116,7 +121,7 @@
 
   }
 
-  #mini #yesButt:hover{
+  #mini, #yesButt:hover{
     background-color: #CC9787;
 
     -moz-transition: background-color 0.8s ease-in-out;
@@ -125,7 +130,7 @@
   }
 
 
-    #mini #noButt:hover{
+    #mini, #noButt:hover{
       background-color: #CC9787;
 
       -moz-transition: background-color 0.8s ease-in-out;
@@ -135,25 +140,32 @@
 
   #yesButt {
     font-family: inherit;
-    font-size: 40pt;
-
+    font-size: 1rem;
     background-color: #3e6589;
-    border-style: solid;
-    border-color: #95888f;
     border-width: 5px;
     border-radius: 9px;
+    border: none;
+    padding-top: 25px;
+    width: 18%;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    color: #f6f7fb;
+
   }
 
   #noButt{
     font-family: inherit;
-    font-size: 40pt;
+    font-size: 1rem;
     background-color: #3e6589;
-    border-color: #4a4f69;
     border-width: 5px;
     border-radius: 9px;
+    border: none;
+    padding-top: 25px;
+    width: 18%;
+    padding-bottom: 25px;  
+    color: #f6f7fb;
 
   }
-d
 
   </style>
 </head>
@@ -161,13 +173,10 @@ d
 
   <center id = 'main'>
     <h1 id = 'title'> Do you need a favor? </h1>
-
-    <div id = 'mini'>
-      <%= button_to "YES", new_path, :id => "yesButt", :type => "button", :method => :get %>
-      <%= button_to "NO", gmap_path, :id => "noButt", :type => "button", :method => :get %>
+      <%= button_to "Yes please!", new_path, :id => "yesButt", :type => "button", :method => :get %>
+      <%= button_to "Maybe later :)", gmap_path, :id => "noButt", :type => "button", :method => :get %>
       <!--    <h3> <%= link_to "Continue", ques_path %><h3> -->
       <!-- ^example link^ -->
-    </div>
   </center>
 
 </body>
