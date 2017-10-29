@@ -2,11 +2,29 @@
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <link href=' http://fonts.googleapis.com/css?family=Century+Gothic' rel='stylesheet' type='text/css'>
+
   <title>Samaritan</title>
   <style>
+/*
+  @font-face {
+      font-family: "Century Gothic";
+      src: url(http://www.example.org/mycustomfont.ttf) format("truetype");
+  }
+  p.customfont {
+  font-family: "My Custom Font", Verdana, Tahoma;
+  }*/
 
   /* Optional: Makes the sample page fill the window. */
-  html, h1, body {
+
+  h1{
+    font-weight: 200;
+  }
+  
+  html, body {
+
+
+
     height: 100%;
     width: 100%;
 
@@ -17,9 +35,9 @@
     background-color: #052542;
 
 
-    color: #7a9ec7;
+    color: #f6f7fb;
 
-    font-family: "Helvetica Neue Regular";
+    font-family: 'Century Gothic';
 
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -27,6 +45,7 @@
        -o-animation: fadein 2s; /* Opera < 12.1 */
           animation: fadein 2s;
 }
+
 
 @keyframes fadein {
   from { opacity: 0; }
@@ -55,14 +74,18 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+
+        align-items: center;
+        align-content: center;
+
   }
 
   #title{
-    position: relative;
+    position: inherit;
     align-items: center;
     align-content: center;
     padding-bottom: 2rem;
-    font-family: "Helvetica Neue Bold";
+    font-family: inherit;
     font-size: 40pt;
     color: #f6f7fb;
 
@@ -71,11 +94,16 @@
   #mini{
     width: 10%;
     height: 10%;
+    position: inherit;
+    right: 4%;
+
   }
   #mini button{
-    background-color: #192290;
-    width: 9rem;
-    height: 6rem;
+    width: 15rem;
+    height: 4rem;
+
+    align-items: center;
+    align-content: center;
 
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -84,39 +112,49 @@
     border: none;
 
     font: inherit;
-    color: #3e6589;
+    color: #f6f7fb;
 
   }
 
-  #mini button:hover{
-    background-color: #7a9ec7;
+  #mini #yesButt:hover{
+    background-color: #CC9787;
+
     -moz-transition: background-color 0.8s ease-in-out;
 		-webkit-transition: background-color 0.8s ease-in-out;
 		-ms-transition: background-color 0.8s ease-in-out;
   }
 
+
+    #mini #noButt:hover{
+      background-color: #CC9787;
+
+      -moz-transition: background-color 0.8s ease-in-out;
+  		-webkit-transition: background-color 0.8s ease-in-out;
+  		-ms-transition: background-color 0.8s ease-in-out;
+    }
+
   #yesButt {
-    font-family: "Helvetica Neue Bold";
+    font-family: inherit;
     font-size: 40pt;
 
-    color: #7a9ec7;
+    background-color: #3e6589;
     border-style: solid;
     border-color: #95888f;
     border-width: 5px;
-    border-radius: 20px;
+    border-radius: 9px;
   }
 
   #noButt{
-    font-family: "Helvetica Neue Bold";
+    font-family: inherit;
     font-size: 40pt;
-    color: #7a9ec7;
+    background-color: #3e6589;
     border-color: #4a4f69;
     border-width: 5px;
-    border-radius: 20px;
+    border-radius: 9px;
 
   }
   #title{
-    font-color:#7a9ec7;
+    font-color: #7a9ec7;
     color: #7a9ec7;
   }
 
@@ -128,8 +166,8 @@
     <h1 id = 'title'> Do you need a favor? </h1>
 
     <div id = 'mini'>
-      <button id = 'yesButt' onclick="location.href='./requestForm.html'"; type="button">Yes!</button>
-      <button id = 'noButt' onclick="location.href='./index.html'"; type="button">No Thank You!</button>
+      <button id = 'yesButt' onclick="location.href='./requestForm.html'"; type="button">YES</button>
+      <button id = 'noButt' onclick="location.href='./index.html'"; type="button">NO</button>
     </div>
   </center>
 
