@@ -97,9 +97,9 @@
   #contact input[type="tel"]:hover,
   #contact input[type="url"]:hover,
   #contact textarea:hover {
-    -webkit-transition: border-color 0.5s ease-in-out;
-    -moz-transition: border-color 0.5s ease-in-out;
-    transition: border-color 0.5s ease-in-out;
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
     border: 2px solid #CC9787;
 
     border-style: solid;
@@ -208,7 +208,7 @@
   </style>
 </head>
 <body>
-
+<!-- old html form
   <center>
 
   <div class="container">
@@ -228,6 +228,21 @@
       </fieldset>
     </form>
   </div>
+-->
+  <!-- new form in rails -->
+  <%= form_for :request, url: requests_path do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %><br><br>
+
+    <%= f.label :details %><br>
+    <%= f.text_field :details %><br><br>
+
+    <%= f.submit :'make request'%>
+  <% end %>
+
 
   <!-- <form action = "sendToBackend"> -->
   <!-- </form> -->
