@@ -1,140 +1,217 @@
 <!DOCTYPE html >
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>Samaritan</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        background-color: #052542;
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <link href=' http://fonts.googleapis.com/css?family=Century+Gothic' rel='stylesheet' type='text/css'>
 
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-         -moz-animation: fadein 2s; /* Firefox < 16 */
-          -ms-animation: fadein 2s; /* Internet Explorer */
-           -o-animation: fadein 2s; /* Opera < 12.1 */
-              animation: fadein 2s;
-    }
+  <title>Samaritan</title>
+  <style>
+  /* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+  #map {
+    height: 100%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    background-color: #052542;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+  }
 
 
-    @keyframes fadein {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
-    /* Firefox < 16 */
-    @-moz-keyframes fadein {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
-    /* Safari, Chrome and Opera > 12.1 */
-    @-webkit-keyframes fadein {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
-    /* Internet Explorer */
-    @-ms-keyframes fadein {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    </style>
-  </head>
-  <body>
-    <div id="map" height="460px" width="100%"></div>
-    <div id="form">
-      <table>
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  #yesButt {
+    font-family: 'Century Gothic';
+    font-size: 10pt;
+    color: #7a9ec7;
+    position: fixed;
+    top:  90%;
+    left: 45%;
+
+    width: 10.5rem;
+    height: 3rem;
+
+    background-color: #3e6589;
+    border-color: #95888f;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 9px;
+  }
+
+  #yesButt:hover{
+    background-color: #CC9787;
+    cursor: pointer;
+    -moz-transition: background-color 0.8s ease-in-out;
+		-webkit-transition: background-color 0.8s ease-in-out;
+		-ms-transition: background-color 0.8s ease-in-out;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="map" height="460px" width="100%"></div>
+<div style="text-align:center;">
+  <button id = 'yesButt' onclick="location.href='./requestForm.html'"; type="button"> Request a Favor </button>
+</div>
+  <!-- <div id="form">
+    <table>
       <tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>
       <tr><td>Address:</td> <td><input type='text' id='address'/> </td> </tr>
       <tr><td>Type:</td> <td><select id='type'> +
-                 <option value='bar' SELECTED>bar</option>
-                 <option value='restaurant'>restaurant</option>
-                 </select> </td></tr>
-                 <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
-      </table>
-    </div>
-    <div id="message">Location saved</div>
-    <script>
-      var map;
-      var marker;
-      var infowindow;
-      var messagewindow;
+        <option value='bar' SELECTED>bar</option>
+        <option value='restaurant'>restaurant</option>
+      </select> </td></tr>
+      <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
+    </table>
+  </div>
+  <div id="message">Location saved</div> -->
+  <script>
+  var map;
+  var marker;
+  var infowindow;
+  var messagewindow;
 
-      function initMap() {
-        var california = {lat: 37.4419, lng: -122.1419};
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: california,
-          zoom: 13
+
+  function initMap() {
+
+
+    if('geolocation' in window){
+      navigator.geolocation.getCurrentPosition(function(position) {
+      var location = {lat: position.coords.latitude, lng: position.coords.longitude};
+      });
+    }
+    else{
+      var location = {lat: 30.2689820, lng: -97.7403350};
+    }
+
+
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: location,
+      zoom: 15
+    });
+
+    marker1 = new google.maps.Marker({
+      position: {lat: 30.2689820, lng: -97.7403350},
+      map: map});
+
+      google.maps.event.addListener(marker1, 'click', function() {
+        window.open('./dumQuest.html','_self');
+      });
+
+      marker2 = new google.maps.Marker({
+        position: {lat: 30.2789920, lng: -97.7303350},
+        map: map});
+
+        google.maps.event.addListener(marker2, 'click', function() {
+          window.open('./dumQuest.html','_self');
         });
 
-        infowindow = new google.maps.InfoWindow({
-          content: document.getElementById('form')
-        });
+        marker3 = new google.maps.Marker({
+          position: {lat: 30.2600820, lng: -97.7453350},
+          map: map});
 
-        messagewindow = new google.maps.InfoWindow({
-          content: document.getElementById('message')
-        });
-
-        google.maps.event.addListener(map, 'click', function(event) {
-          marker = new google.maps.Marker({
-            position: event.latLng,
-            map: map
+          google.maps.event.addListener(marker3, 'click', function() {
+            window.open('./dumQuest.html','_self');
           });
 
+          marker4 = new google.maps.Marker({
+            position: {lat: 30.2589820, lng: -97.7343350},
+            map: map});
 
-          google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map, marker);
-          });
-        });
+            google.maps.event.addListener(marker4, 'click', function() {
+              window.open('./dumQuest.html','_self');
+            });
+
+    infowindow = new google.maps.InfoWindow({
+      content: document.getElementById('form')
+    });
+
+    messagewindow = new google.maps.InfoWindow({
+      content: document.getElementById('message')
+    });
+
+    google.maps.event.addListener(map, 'click', function(event) {
+      marker = new google.maps.Marker({
+        position: event.latLng,
+        map: map
+      });
+
+
+      google.maps.event.addListener(marker, 'click', function() {
+        window.open('./dumQuest.html','_self');
+      });
+    });
+  }
+
+  function saveData() {
+    var name = escape(document.getElementById('name').value);
+    var address = escape(document.getElementById('address').value);
+    var type = document.getElementById('type').value;
+    var latlng = marker.getPosition();
+    var url = 'phpsqlinfo_addrow.php?name=' + name + '&address=' + address +
+    '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+
+    downloadUrl(url, function(data, responseCode) {
+
+      if (responseCode == 200 && data.length <= 1) {
+        infowindow.close();
+        messagewindow.open(map, marker);
       }
+    });
+  }
 
-      function saveData() {
-        var name = escape(document.getElementById('name').value);
-        var address = escape(document.getElementById('address').value);
-        var type = document.getElementById('type').value;
-        var latlng = marker.getPosition();
-        var url = 'phpsqlinfo_addrow.php?name=' + name + '&address=' + address +
-                  '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+  function downloadUrl(url, callback) {
+    var request = window.ActiveXObject ?
+    new ActiveXObject('Microsoft.XMLHTTP') :
+    new XMLHttpRequest;
 
-        downloadUrl(url, function(data, responseCode) {
-
-          if (responseCode == 200 && data.length <= 1) {
-            infowindow.close();
-            messagewindow.open(map, marker);
-          }
-        });
+    request.onreadystatechange = function() {
+      if (request.readyState == 4) {
+        request.onreadystatechange = doNothing;
+        callback(request.responseText, request.status);
       }
+    };
 
-      function downloadUrl(url, callback) {
-        var request = window.ActiveXObject ?
-            new ActiveXObject('Microsoft.XMLHTTP') :
-            new XMLHttpRequest;
+    request.open('GET', url, true);
+    request.send(null);
+  }
 
-        request.onreadystatechange = function() {
-          if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
-            callback(request.responseText, request.status);
-          }
-        };
+  function doNothing () {
+  }
 
-        request.open('GET', url, true);
-        request.send(null);
-      }
-
-      function doNothing () {
-      }
-
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn00fWCbiNirzEopNaaHLvzYPX68OQXsw&callback=initMap">
-    </script>
-  </body>
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn00fWCbiNirzEopNaaHLvzYPX68OQXsw&callback=initMap">
+  </script>
+</body>
 </html>
