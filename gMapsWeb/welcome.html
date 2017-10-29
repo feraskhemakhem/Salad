@@ -5,24 +5,40 @@
     <title>Samaritan</title>
     <style>
 
+    html.loading {
+      -webkit-transition: background-color 0; /* Safari, Chrome and Opera > 12.1 */
+         -moz-transition: background-color 0; /* Firefox < 16 */
+          -ms-transition: background-color 0;/* Internet Explorer */
+           -o-transition: background-color 0; /* Opera < 12.1 */
+              transition: background-color 0;
+    }
+
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
+        opacity: 0;
         align-items: center;
         align-content: center;
         align-self: center;
         color:#ffffff;
         background-color: #052542;
 
+        -webkit-transition: opacity 5s ease-in; /* Safari, Chrome and Opera > 12.1 */
+           -moz-transition: opacity 5s ease-in; /* Firefox < 16 */
+            -ms-transition: opacity 5s ease-in;/* Internet Explorer */
+             -o-transition: opacity 5s ease-in; /* Opera < 12.1 */
+                transition: opacity 5s ease-in;
+
+
         font-family: "Helvetica Neue Regular";
 
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-         -moz-animation: fadein 2s; /* Firefox < 16 */
-          -ms-animation: fadein 2s; /* Internet Explorer */
-           -o-animation: fadein 2s; /* Opera < 12.1 */
-              animation: fadein 2s;
+           -moz-animation: fadein 2s; /* Firefox < 16 */
+            -ms-animation: fadein 2s; /* Internet Explorer */
+             -o-animation: fadein 2s; /* Opera < 12.1 */
+                animation: fadein 2s;
   }
 
   @keyframes fadein {
@@ -58,7 +74,7 @@
   <body>
 <center>
     <h1> Welcome Samaritan! </h1>
-    <h3> <a href="./question.html"> <b> Continue <b> </a> <h3>
+    <h3> <a href="./question.html"> <b> Sign In <b> </a> <h3>
 </center>
   </body>
 
