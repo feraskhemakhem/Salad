@@ -119,10 +119,8 @@
    }
 
    #mini{
-     width: 10%;
-     height: 10%;
-     position: inherit;
-     right: 2%;
+     top: 50%;
+     position: relative;
 
    }
    #mini button{
@@ -163,31 +161,46 @@
    #yesButt {
      font-family: 'Century Gothic';
      font-size: 10pt;
+     color: #f6f7fb;
+     padding-top: 16px;
+     padding-bottom: 16px;
      color: #7a9ec7;
+     position: fixed;
+     top:  90%;
+     left: 45%;
 
      width: 10.5rem;
      height: rem;
 
      background-color: #3e6589;
      border-color: #3e6589;
-     border-style: solid;
+     border-style: none;
      border-width: 16px;
      border-radius: 9px;
+     align-items: center;
+     align-content: center;
    }
 
    #noButt{
      font-family: 'Century Gothic';
      font-size: 10pt;
+     color: #f6f7fb;
+     padding-top: 16px;
+     padding-bottom: 16px;
      color: #7a9ec7;
+     top:  90%;
+     left: 45%;
 
      width: 10.5rem;
      height: rem;
 
      background-color: #3e6589;
      border-color: #3e6589;
-     border-style: solid;
+     border-style: none;
      border-width: 16px;
      border-radius: 9px;
+     align-items: center;
+     align-content: center;
 
    }
    #title{
@@ -233,9 +246,9 @@
      <div id = 'mini'>
        <br>
        <br>
-       <%= button_to "Sure Thing!", gmap_path, :id => "noButt", :type => "button", :method => :get %>
+       <%= button_to "Sure thing!", gmap_path, :id => "noButt", :type => "button", :method => :get %>
        <br>
-       <%= button_to "Sorry, can't help. :(", gmap_path, :id => "noButt", :type => "button", :method => :get %>
+       <%= button_to "Sorry, can't help :(", gmap_path, :id => "noButt", :type => "button", :method => :get %>
 
      </div>
    </center>
