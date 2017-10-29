@@ -8,21 +8,89 @@
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
+        width: 100%;
         margin: 0;
         padding: 0;
         align-items: center;
         align-content: center;
         align-self: center;
-        color:#ffffff;
+        color: #f6f7fb;
+        font-size: 1rem;
         background-color: #052542;
 
-        font-family: "Helvetica Neue Regular";
+        font-family: 'Century Gothic';
 
         -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
          -moz-animation: fadein 2s; /* Firefox < 16 */
           -ms-animation: fadein 2s; /* Internet Explorer */
            -o-animation: fadein 2s; /* Opera < 12.1 */
               animation: fadein 2s;
+  }
+
+  #main{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+        align-items: center;
+        align-content: center;
+
+  }
+
+  #potato {
+    position: inherit;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 2rem;
+    font-family: inherit;
+    font-size: 40pt;
+    color: #f6f7fb;
+    font-weight: 200;
+  }
+
+  #purrtato {
+  font-family: inherit;
+   width: 18%;
+   padding-top: 25px;
+   font-size: 1rem;
+   padding-bottom: 25px;
+    position: inherit;
+    right: 4%;
+    color: #f6f7fb;
+    background-color: #7a9ec7;
+    border-radius: 6px;
+    border: none;
+  }
+
+  #purrtato button{
+    width: 15rem;
+    height: 4rem;
+
+    align-items: center;
+    align-content: center;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    display: block;
+    border: none;
+
+    font: inherit;
+    color: #f6f7fb;
+
+  }
+
+  #purrtato:hover{
+    background-color: #CC9787;
+
+    -moz-transition: background-color 0.8s ease-in-out;
+    -webkit-transition: background-color 0.8s ease-in-out;
+    -ms-transition: background-color 0.8s ease-in-out;
+  }
+
+  #potato{
+    font-color: #7a9ec7;
+    color: #7a9ec7;
   }
 
   @keyframes fadein {
@@ -56,11 +124,12 @@
     </style>
   </head>
   <body>
-<center>
-    <h1> Welcome Samaritan! </h1>
-    <h3> <%= link_to "Continue", ques_path %><h3>
+<center id = 'main'>
+    <h1 id = 'potato'> Welcome, Samaritan! </h1>
+    <!--<h3 id="purrtato"> <%= link_to "CONTINUE", ques_path %><h3>-->
+      <%= button_to "CONTINUE", ques_path, :id => "purrtato", :type => "button", :method => :get %>
       <!-- change -->
-</center>
+    </center>
   </body>
 
 
